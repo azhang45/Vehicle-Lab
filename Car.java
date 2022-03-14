@@ -84,8 +84,19 @@ public abstract class Car{
     days successfully driven.
     @throws IllegalArgumentException if miles is negative for any of the
     attempted days.*/
-    public int roadTrip(List<Double> milesEachDay){
-        return 0;
+    public int roadTrip(List<Double> milesEachDay) {
+        // check for no negative distances
+        for (int i = 0; i < milesEachDay.size(); ++i) {
+            if (milesEachDay.get(i) < 0) {
+                throw new IllegalArgumentException(String.format("Mile at index %d(%.1f) must be at least 0. ",
+                        i, milesEachDay.get(i)));
+            }
+        }
+        int i = 0;
+        while (canDrive(milesEachDay.get(i))) {
+            drive(milesEachDay.get(i++));
+        }
+        return i;
     }
     
 }
