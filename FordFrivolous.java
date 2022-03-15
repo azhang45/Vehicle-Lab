@@ -36,9 +36,6 @@ public class FordFrivolous extends GasPoweredCar implements SelfDriving, Flying{
 
     @Override
     public void fly(double miles){
-        if (canFly(miles)){
-
-        }
         
     }
 
