@@ -1,3 +1,5 @@
+package vehicle;
+
 public abstract class ElectricCar extends Car {
     private final double maxRange;
     private double range;
