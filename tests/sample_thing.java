@@ -3,7 +3,7 @@ package tests;
 import bcatest.BCATestScenario;
 import vehicle.HondaAccordian;
 
-public class Group3_6Honda_Accordian_Constructor extends BCATestScenario {
+public class sample_thing extends BCATestScenario {
 
 
     public int runTest() {
