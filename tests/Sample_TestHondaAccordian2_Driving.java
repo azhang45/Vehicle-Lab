@@ -5,11 +5,12 @@ import bcatest.BCATestScenario;
 
 public class Sample_TestHondaAccordian2_Driving extends BCATestScenario {
 
-
     public int runTest() {
         HondaAccordian c1 = new HondaAccordian(2018);
 
-        assertThrows(IllegalArgumentException.class, () -> {c1.drive(-1);}, "Driving mileage cannot be negative.");
+        assertThrows(IllegalArgumentException.class, () -> {
+            c1.drive(-1);
+        }, "Driving mileage cannot be negative.");
 
         assertTrue(c1.canDrive(30), "canDrive should be true");
         c1.drive(30);
@@ -18,7 +19,8 @@ public class Sample_TestHondaAccordian2_Driving extends BCATestScenario {
         c1.drive(200);
         assertEquals(c1.getMileage(), 230, .1, "Mileage should be 230 after second drive.");
 
-        assertEquals(c1.getRemainingRange(), c1.getFuelCapacity() * c1.getMPG() - 230, .1, "Remaining range of car not correct after driving twice.");
+        assertEquals(c1.getRemainingRange(), c1.getFuelCapacity() * c1.getMPG() - 230, .1,
+                "Remaining range of car not correct after driving twice.");
 
         assertFalse(c1.canDrive(252), "Driving 252 should fail.");
         assertTrue(c1.canDrive(251), "Driving 251 should succeed.");
@@ -26,10 +28,10 @@ public class Sample_TestHondaAccordian2_Driving extends BCATestScenario {
         c1.drive(251);
         assertEquals(c1.getMileage(), 481, .1, "Mileage should be 481 after third drive.");
 
-        assertThrows(IllegalArgumentException.class, () -> {c1.drive(5);}, "Driving beyond empty should fail.");
-
+        assertThrows(IllegalArgumentException.class, () -> {
+            c1.drive(5);
+        }, "Driving beyond empty should fail.");
 
         return getFailedCount();
     }
 }
-
