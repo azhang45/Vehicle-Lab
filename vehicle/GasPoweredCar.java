@@ -32,8 +32,8 @@ public abstract class GasPoweredCar extends Car {
     }
 
     public void drive(double miles) {
-        if (miles <= 0) {
-            throw new IllegalArgumentException(String.format("Miles %.1f must be greater than 0.", miles));
+        if (miles < 0) {
+            throw new IllegalArgumentException(String.format("Miles %.1f must be non-positive.", miles));
         } else if (!canDrive(miles)) {
 
             throw new IllegalArgumentException(String.format("Cannot drive %.1f miles, the max you can go with current "
