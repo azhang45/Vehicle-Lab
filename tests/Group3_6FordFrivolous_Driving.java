@@ -6,7 +6,7 @@ import bcatest.BCATestScenario;
 public class Group3_6FordFrivolous_Driving extends BCATestScenario {
 
     public int runTest() {
-        FordFrivolous c1 = new FordFrivolous(2020);
+        FordFrivolous c1 = new FordFrivolous();
 
         assertThrows(IllegalArgumentException.class, () -> {
             c1.drive(-1);
