@@ -24,8 +24,8 @@ public class Group3_6TeslaModelZ_Driving extends BCATestScenario {
             "Remaining range of car not correct after driving three times.");
 
 
-        assertFalse(c1.canDrive(252), "Driving 111 should fail.");
-        assertTrue(c1.canDrive(251), "Driving 109 should succeed.");
+        assertFalse(c1.canDrive(111), "Driving 111 should fail.");
+        assertTrue(c1.canDrive(109), "Driving 109 should succeed.");
 
         c1.drive(110);
         assertEquals(c1.getMileage(), 340, .1, "Mileage should be 340 after third drive.");
