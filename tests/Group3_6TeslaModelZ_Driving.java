@@ -1,12 +1,13 @@
 package tests;
 
-import vehicle.HondaAccordian;
 import bcatest.BCATestScenario;
+import vehicle.TeslaModelZ;
+
 
 public class Group3_6TeslaModelZ_Driving extends BCATestScenario {
 
     public int runTest() {
-        HondaAccordian c1 = new HondaAccordian(2018);
+        TeslaModelZ c1 = new TeslaModelZ(50);
 
         assertThrows(IllegalArgumentException.class, () -> {
             c1.drive(-1);
@@ -19,8 +20,9 @@ public class Group3_6TeslaModelZ_Driving extends BCATestScenario {
         c1.drive(200);
         assertEquals(c1.getMileage(), 230, .1, "Mileage should be 230 after second drive.");
 
-        assertEquals(c1.getRemainingRange(), c1.getFuelCapacity() * c1.getMPG() - 230, .1,
-                "Remaining range of car not correct after driving twice.");
+        assertEquals(c1.getRemainingRange(), c1.getMaxRange() - 230, .1,
+            "Remaining range of car not correct after driving three times.");
+
 
         assertFalse(c1.canDrive(252), "Driving 111 should fail.");
         assertTrue(c1.canDrive(251), "Driving 109 should succeed.");
