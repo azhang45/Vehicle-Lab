@@ -51,7 +51,7 @@ public class ChevroletBird extends ElectricCar implements Flying {
             throw new IllegalArgumentException("Miles exceeds the remaining range of the car.");
         }
 
-        // driving/flying uses same amoutn of gas per mile
+        // driving/flying uses same amount of gas per mile
         return canDrive(miles);
 
     }
