@@ -36,7 +36,9 @@ public class ChevroletBird extends ElectricCar implements Flying {
 
         if (canDrive(miles)) {
             wingsExtended = false;
-            drive(miles);
+            super.drive(miles);
+        } else {
+            throw new IllegalArgumentException("Cannot drive greater than remaining range.");
         }
 
     }
@@ -46,9 +48,6 @@ public class ChevroletBird extends ElectricCar implements Flying {
         if (miles < 0) {
             throw new IllegalArgumentException("Miles cannot be negative");
 
-        }
-        if (miles > getRemainingRange()) {
-            throw new IllegalArgumentException("Miles exceeds the remaining range of the car.");
         }
 
         // driving/flying uses same amount of gas per mile
@@ -60,6 +59,9 @@ public class ChevroletBird extends ElectricCar implements Flying {
     public void fly(double miles) {
         if (canFly(miles)) {
             wingsExtended = true;
+            decreaseCharge(miles);
+        } else {
+            throw new IllegalArgumentException("Miles exceeds remaining range of car.");
         }
 
     }

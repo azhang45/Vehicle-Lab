@@ -2,7 +2,6 @@ package tests;
 
 import bcatest.BCATestScenario;
 import vehicle.FordFrivolous;
-import vehicle.HondaAccordian;
 
 public class Group3_6FordFriv_SelfDriving extends BCATestScenario {
 
