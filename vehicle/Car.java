@@ -123,7 +123,7 @@ public abstract class Car {
             }
         }
         int i = 0;
-        while (canDrive(milesEachDay.get(i))) {
+        while (i < milesEachDay.size() && canDrive(milesEachDay.get(i))) {
             drive(milesEachDay.get(i++));
         }
         return i;
